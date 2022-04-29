@@ -1,6 +1,11 @@
 // import catchError from "./Components/catcherror.js";
+// import pricefilter from "./Components/filterprice.js";
+
+
 const resultHtml = document.querySelector(".result");
-const Search = document.querySelector(".filter").value;
+const search = document.querySelector(".filter");
+
+
 
 const url = "https://fakestoreapi.com/products";
 
@@ -24,12 +29,10 @@ async function fakeStoreApi() {
                                     </div>
                                     <div class="card-text">${result[i].title}</div>
                                     <div class="card-text">${result[i].price}</div>
+                                    <div class="card-icon"><i class="fa fa-heart"></i></div>
                                     </div>`
 
-
         }
-
-
     }
 
     catch {
@@ -39,20 +42,18 @@ async function fakeStoreApi() {
 
 fakeStoreApi();
 
-Search.onkeyup = function() {
-    console.log(Event);
+search.onkeyup = function () {
+    console.log(event);
 
-    const searchvalue = Event.target(search).value.trim();
+    const searchvalue = event.target.value.trim();
 
-    const pricedfilter = results.filter(function (result) {
-        if (result.price[i].startWith(searchvalue)) {
+    const filteredprice = filter()(function (result) {
+        if (result[i].price.startsWith(searchvalue)) {
             return true;
         }
-    });
+    })
 
-    console.log(pricedfilter);
+    resultHtml = filteredprice;
 
-    result = pricedfilter;
-
-    fakeStoreApi();
-};
+    console.log(filteredprice);
+}
