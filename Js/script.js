@@ -6,18 +6,32 @@ import { getExistingWishlist } from "./utilities/wishListFunction.js";
 const url = "https://fakestoreapi.com/products";
 const resultHtml = document.querySelector(".products-item");
 
-
+const wishList = getExistingWishlist();
 
 export async function fakeStoreApi() {
     try {
+         
+
+
+
         const response = await fetch(url);
         let result = await response.json();
+        console.log(result)
 
-       
+        // const doesObjectExist = wishList.find(function (fav) {
+        //     return perseInt(fav.id) === products.id;
+        // });
+        // console.log(doesObjectExist);
+
+        // if (doesObjectExist) {
+        //     cssClass = "far";
+        // };
 
         resultHtml.innerHTML = "";
+        
 
         result.forEach((products) => {
+
             resultHtml.innerHTML += `
                                     <div class="card">
                                     <div>

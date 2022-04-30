@@ -9,7 +9,7 @@ body {
 }
 
 .menu {
-    background-color: black;
+    
     width: 100vw;
     height: 30px;
     display: flex;
@@ -21,8 +21,9 @@ body {
         text-decoration: none;
         text-align: center;
         text-transform: uppercase;
-        color: #fff;
+        font-size: 14px;
         padding: 10px;
+        color: black;
     }
 }
 
@@ -30,7 +31,7 @@ body {
     display: block;
     margin: auto;
     border: 1px solid;
-    padding: 10px;
+    padding: 6px;
     margin-top: 1rem;
 
 }

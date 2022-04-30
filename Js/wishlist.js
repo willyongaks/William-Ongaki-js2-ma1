@@ -5,6 +5,10 @@ import { navigaation } from "./Components/Navigation.js";
 const wishList = getExistingWishlist();
 const resultHtml = document.querySelector(".products-item");
 
+
+if(wishList.length === 0){
+    getExistingWishlist.innerHTML = "Nothing on the wishlist"
+}
 resultHtml.innerHTML = "";
 
 wishList.forEach((product) => {

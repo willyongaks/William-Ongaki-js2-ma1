@@ -3,7 +3,8 @@ export function navigaation(){
 
 navigationMenu.innerHTML = `<div class=menu>
 
-                            <a href="/index.html">Home</a>
+                            <a href="/index.html" class="active">Home</a>
+                            |
                             <a href="/wishlist.html">Whishlist</a>
                             </div>`
 };
