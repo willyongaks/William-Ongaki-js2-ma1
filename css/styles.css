@@ -39,7 +39,7 @@ body {
   margin-top: 1rem;
 }
 
-.result {
+.products-item {
   width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,7 +54,7 @@ body {
           align-items: center;
   margin: 0 auto;
 }
-.result .card {
+.products-item .card {
   width: 250px;
   height: 300px;
   padding: 2rem;
@@ -64,17 +64,24 @@ body {
   background-color: azure;
   position: relative;
 }
-.result .card-text {
+.products-item .card-text {
   width: 100%;
   padding-top: 1rem;
   font-size: 14px;
 }
-.result .card-icon {
+.products-item .card-icon {
   position: absolute;
-  top: 0;
-  right: 0;
+  right: 10px;
+  top: 10px;
 }
-.result img {
+.products-item img {
   width: 100px;
   margin-left: 2rem;
+}
+.products-item i:hover {
+  color: red;
+  cursor: pointer;
+}
+.products-item .far {
+  color: red;
 }/*# sourceMappingURL=styles.css.map */

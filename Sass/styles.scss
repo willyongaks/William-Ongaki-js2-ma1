@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 
     a {
         text-decoration: none;
@@ -35,7 +35,7 @@ body {
 
 }
 
-.result {
+.products-item {
     width: 90vw;
     display: flex;
     flex-wrap: wrap;
@@ -63,10 +63,10 @@ body {
         font-size: 14px;
     }
 
-    .card-icon{
+    .card-icon {
         position: absolute;
-        top: 0;
-        right: 0;
+        right: 10px;
+        top: 10px;
     }
 
 
@@ -74,5 +74,14 @@ body {
     img {
         width: 100px;
         margin-left: 2rem;
+    }
+
+    i:hover{
+        color: red;
+        cursor: pointer;
+    }
+
+    .far{
+        color: red;
     }
 }
