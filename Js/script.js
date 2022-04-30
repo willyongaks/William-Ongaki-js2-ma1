@@ -1,6 +1,5 @@
-import { filtrerdPrice } from "./Components/filterprice.js";
+// import { filtrerdPrice } from "./Components/filterprice.js";
 import { navigaation } from "./Components/Navigation.js";
-import { wishList } from "./Components/wishlist.js";
 import { getExistingWishlist } from "./utilities/wishListFunction.js";
 
 
@@ -12,24 +11,25 @@ const resultHtml = document.querySelector(".products-item");
 export async function fakeStoreApi() {
     try {
         const response = await fetch(url);
-        let product = await response.json();
+        let result = await response.json();
 
-        console.log(product)
+       
 
         resultHtml.innerHTML = "";
 
-        for (let i = 0; i < product.length; i++) {
-
+        result.forEach((products) => {
             resultHtml.innerHTML += `
                                     <div class="card">
                                     <div>
                                         <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="">
                                     </div>
-                                    <div class="card-text">${product[i].title}</div>
-                                    <div class="card-text">${product[i].price}</div>
-                                    <div class="card-icon"><i class="fa fa-heart" data-id="${product[i].id}" data-title="${product[i].title}"></i></div>
+                                    <div class="card-text">${products.title}</div>
+                                    <div class="card-text">${products.price}</div>
+                                    <div class="card-icon"><i class="fa fa-heart" data-id="${products.id}" data-title="${products.title}"></i></div>
                                     </div>`;
-        }
+        }); 
+            
+
     }
     catch {
 
