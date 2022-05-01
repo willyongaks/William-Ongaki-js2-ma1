@@ -1,4 +1,6 @@
-export function filtrerdPrice() {
+import { fakeStoreApi } from "../script.js";
+
+export async function filtrerdPrice() {
 
     const search = document.querySelector(".filter");
 
@@ -7,7 +9,7 @@ export function filtrerdPrice() {
 
         const searchedPrice = event.target.value.trim();
         const productFiltered = result.filter(function (product) {
-            if (product.title.toLowerCase().startsWith(searchedPrice)) {
+            if (product.price > searchedPrice) {
                 return true;
             }
 
