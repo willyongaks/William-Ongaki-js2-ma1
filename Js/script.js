@@ -1,4 +1,4 @@
-// import { filtrerdPrice } from "./Components/filterprice.js";
+import { filtrerdPrice } from "./Components/filterprice.js";
 import { navigaation } from "./Components/Navigation.js";
 import { getExistingWishlist } from "./utilities/wishListFunction.js";
 
@@ -6,31 +6,35 @@ import { getExistingWishlist } from "./utilities/wishListFunction.js";
 const url = "https://fakestoreapi.com/products";
 const resultHtml = document.querySelector(".products-item");
 
+
+
 const wishList = getExistingWishlist();
 
 export async function fakeStoreApi() {
     try {
-         
-
-
-
         const response = await fetch(url);
-        let result = await response.json();
-        console.log(result)
+        const result = await response.json();
 
-        // const doesObjectExist = wishList.find(function (fav) {
-        //     return perseInt(fav.id) === products.id;
-        // });
-        // console.log(doesObjectExist);
+        // console.log(result)
 
-        // if (doesObjectExist) {
-        //     cssClass = "far";
-        // };
 
         resultHtml.innerHTML = "";
-        
+
 
         result.forEach((products) => {
+
+
+            const doesObjectExist = wishList.find(function (fav) {
+                // console.log(wishList)
+
+                return parseInt(fav.id) === products.id;
+            });
+
+            // console.log(doesObjectExist);
+
+            if (doesObjectExist) {
+                
+            }
 
             resultHtml.innerHTML += `
                                     <div class="card">
@@ -39,7 +43,7 @@ export async function fakeStoreApi() {
                                     </div>
                                     <div class="card-text">${products.title}</div>
                                     <div class="card-text">${products.price}</div>
-                                    <div class="card-icon"><i class="fa fa-heart" data-id="${products.id}" data-title="${products.title}"></i></div>
+                                    <div class="card-icon"><i class="fa fa-heart-o" data-id="${products.id}" data-title="${products.title}"></i></div>
                                     </div>`;
         }); 
             
@@ -59,9 +63,9 @@ export async function fakeStoreApi() {
     })
 
     function handleclick() {
-        console.log(event)
-        this.classList.toggle("fa");
-        this.classList.toggle("far");
+        // console.log(event)
+        this.classList.toggle("fa-heart-o");
+        this.classList.toggle("fa-heart");
 
         const id = this.dataset.id;
         const title = this.dataset.title;
